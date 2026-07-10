@@ -55,4 +55,10 @@
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
   }
+
+  // Footer year (keeps copyright current without hardcoding forever)
+  var yearEl = document.getElementById("footer-year");
+  if (yearEl) {
+    yearEl.textContent = String(new Date().getFullYear());
+  }
 })();
