@@ -1,300 +1,57 @@
-<!-- Built with Dendrite Studio -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Dendrite Studio — a native Windows desktop app for running and supervising a team of AI coding agents inside any project folder. Local-first, bring your own model." />
-  <title>Dendrite Studio — AI coding agents on your machine</title>
+  <meta name="description" content="Tendrite is a local-first desktop coding workspace for teams of AI agents." />
+  <title>Tendrite — Your coding workspace, with a brain</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1117'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%2334d399'/%3E%3Ccircle cx='8' cy='10' r='2.5' fill='%2360a5fa'/%3E%3Ccircle cx='24' cy='10' r='2.5' fill='%2360a5fa'/%3E%3Ccircle cx='8' cy='22' r='2.5' fill='%23a78bfa'/%3E%3Ccircle cx='24' cy='22' r='2.5' fill='%23a78bfa'/%3E%3Cpath d='M10.2 11.5 L13.8 14.2 M21.8 11.5 L18.2 14.2 M10.2 20.5 L13.8 17.8 M21.8 20.5 L18.2 17.8' stroke='%234b5563' stroke-width='1.2'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b1220'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%2334d399'/%3E%3Ccircle cx='8' cy='10' r='2.5' fill='%2360a5fa'/%3E%3Ccircle cx='24' cy='10' r='2.5' fill='%23a78bfa'/%3E%3Cpath d='M10 12l4 3m8-3l-4 3m-8 5l4-3m8 3l-4-3' stroke='%234b5563' stroke-width='1.2'/%3E%3C/svg%3E" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Dendrite Studio home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="32" height="32" rx="8" fill="currentColor" class="brand-bg"/>
-            <circle cx="16" cy="16" r="5" fill="#34d399"/>
-            <circle cx="8" cy="10" r="2.5" fill="#60a5fa"/>
-            <circle cx="24" cy="10" r="2.5" fill="#60a5fa"/>
-            <circle cx="8" cy="22" r="2.5" fill="#a78bfa"/>
-            <circle cx="24" cy="22" r="2.5" fill="#a78bfa"/>
-            <path d="M10.2 11.5 L13.8 14.2 M21.8 11.5 L18.2 14.2 M10.2 20.5 L13.8 17.8 M21.8 20.5 L18.2 17.8" stroke="#4b5563" stroke-width="1.2"/>
-          </svg>
-        </span>
-        <span class="brand-text">Dendrite Studio</span>
-      </a>
+      <a class="brand" href="/" aria-label="Tendrite home"><span class="brand-mark" aria-hidden="true">✦</span><span class="brand-text">Tendrite</span></a>
       <nav class="nav" aria-label="Primary">
-        <a href="#features">Features</a>
-        <a href="#install">Install</a>
-        <a class="nav-cta" href="#download">Download</a>
+        <a href="#workspace">Workspace</a><a href="#plans">Free vs Pro</a><a href="#pro">Pro</a><a class="nav-cta" href="/pro/">Get Pro</a>
       </nav>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
     <div id="mobile-nav" class="mobile-nav" hidden>
-      <a href="#features">Features</a>
-      <a href="#install">Install</a>
-      <a href="#download">Download</a>
+      <a href="#workspace">Workspace</a><a href="#plans">Free vs Pro</a><a href="#pro">Pro</a><a href="/pro/">Get Pro</a>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO: download above the fold -->
-    <section id="top" class="hero">
+    <section class="hero hero-home" id="top">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Native Windows · Local-first · Bring your own model</p>
-          <h1>Your team of AI coding agents, running on <em>your</em> machine.</h1>
-          <p class="lede">
-            Dendrite Studio is a native Windows desktop app for running and supervising
-            a team of AI coding agents inside any project folder.
-          </p>
-
-          <div id="download" class="download-block">
-            <a class="btn btn-primary btn-lg" href="#install" id="download-btn">
-              <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Download for Windows
-            </a>
-            <p class="download-meta">Setup.exe · No admin required · Early build</p>
-          </div>
-
-          <ol class="install-quick" aria-label="Quick install steps">
-            <li><span class="step-num">1</span> Download Setup.exe</li>
-            <li><span class="step-num">2</span> If SmartScreen warns, click <strong>More info</strong> → <strong>Run anyway</strong></li>
-            <li><span class="step-num">3</span> Connect a model, open a folder, go</li>
-          </ol>
+          <p class="eyebrow">Local-first · Agentic coding · Your projects</p>
+          <h1>A coding workspace with a <em>memory</em> of how you work.</h1>
+          <p class="lede">Tendrite is a native desktop workspace for running and supervising teams of AI coding agents inside the projects you already own.</p>
+          <div class="action-row"><a class="btn btn-primary btn-lg" href="https://downloads.tendrite.dev/Tendrite-win-Setup.exe" data-download="windows" aria-label="Download Tendrite for Windows">Download for Windows</a><a class="btn btn-secondary btn-lg" href="/pro/">Explore Pro <span aria-hidden="true">↗</span></a></div>
+          <p class="download-meta">First public Windows tester release · Free core workspace · Bring your own model</p>
         </div>
-
-        <div class="hero-visual" aria-hidden="true">
-          <div class="app-window">
-            <div class="app-titlebar">
-              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-              <span class="app-title">Dendrite Studio</span>
-            </div>
-            <div class="app-body">
-              <div class="sidebar">
-                <div class="side-label">Agents</div>
-                <div class="agent-row active"><span class="pulse"></span> Lead</div>
-                <div class="agent-row"><span class="idle"></span> Engineer</div>
-                <div class="agent-row"><span class="idle"></span> Reviewer</div>
-                <div class="agent-row"><span class="working"></span> Scout</div>
-              </div>
-              <div class="panel">
-                <div class="panel-label">Mission</div>
-                <div class="mission-card">
-                  <div class="mission-title">Ship the promo site</div>
-                  <div class="mission-status">Done · 4/4 todos</div>
-                  <div class="progress"><span style="width:100%"></span></div>
-                </div>
-                <div class="chat-line"><span class="who">Lead</span> Hero + install guide shipped.</div>
-                <div class="chat-line"><span class="who engineer">Engineer</span> Static HTML/CSS complete.</div>
-                <div class="chat-line"><span class="who scout">Scout</span> Product facts verified.</div>
-              </div>
-            </div>
-          </div>
-          <div class="glow"></div>
-        </div>
+        <div class="hero-visual" aria-hidden="true"><div class="app-window"><div class="app-titlebar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="app-title">Tendrite / workspace</span></div><div class="app-body"><div class="sidebar"><div class="side-label">Missions</div><div class="agent-row active"><span class="pulse"></span> Ship the release</div><div class="agent-row"><span class="idle"></span> Refactor auth</div><div class="agent-row"><span class="working"></span> Review PR</div></div><div class="panel"><div class="panel-label">Workspace memory</div><div class="mission-card"><div class="mission-title">Make the product page feel clear</div><div class="mission-status">3 agents · 8 decisions remembered</div><div class="progress"><span style="width:76%"></span></div></div><div class="chat-line"><span class="who">Lead</span> I found the last release notes.</div><div class="chat-line"><span class="who engineer">Engineer</span> The change is isolated in a worktree.</div><div class="chat-line"><span class="who scout">Memory</span> Your preferred copy style is concise.</div></div></div></div><div class="glow"></div></div>
       </div>
     </section>
 
-    <!-- FEATURES -->
-    <section id="features" class="features">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">What you get</p>
-          <h2>Built for real agentic coding work</h2>
-          <p class="section-lede">Everything stays local. You bring the model. Dendrite handles the team.</p>
-        </div>
+    <section class="proof-strip"><div class="container proof-grid"><div><strong>Local by default</strong><span>Your code and memory stay on your machine.</span></div><div><strong>Bring your own model</strong><span>Connect the provider or subscription you already use.</span></div><div><strong>Built for momentum</strong><span>Agents, missions, source control, and editor in one place.</span></div></div></section>
 
-        <div class="feature-grid">
-          <article class="feature-card feature-card--wide">
-            <div class="feature-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-                <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.75"/>
-              </svg>
-            </div>
-            <h3>Local-first, bring your own model</h3>
-            <p>
-              Works with an Anthropic key, any OpenAI-compatible key, a Grok / Codex / Copilot
-              subscription, or a local model via Ollama. Nothing leaves your machine except the
-              prompts you send to the model you connect.
-            </p>
-          </article>
+    <section class="section" id="workspace"><div class="container"><div class="section-head"><p class="eyebrow">The workspace</p><h2>From first prompt to finished change.</h2><p class="section-lede">Tendrite gives your agent team a shared operating surface: projects, missions, memory, source control, and the editor all connected.</p></div><div class="feature-grid"><article class="feature-card feature-card--wide"><div class="feature-icon">⌘</div><h3>Run a team, not a chat tab</h3><p>Assign work to agents, give each one a role, and let them work in isolated git worktrees while you keep the whole mission in view.</p></article><article class="feature-card"><div class="feature-icon">◎</div><h3>Local project memory</h3><p>Keep the decisions, conventions, and useful artifacts that make the next session faster.</p></article><article class="feature-card"><div class="feature-icon">◈</div><h3>Provider-ready</h3><p>Connect an API key, compatible account, subscription, or local model through Ollama.</p></article><article class="feature-card"><div class="feature-icon">↯</div><h3>Source control included</h3><p>Inspect diffs, coordinate branches, and bring changes back into your project without leaving the workspace.</p></article></div></div></section>
 
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M12 3c-2 3-5 5-5 9a5 5 0 0010 0c0-4-3-6-5-9z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
-                <path d="M9 14c0 2 1.3 3.5 3 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>A persistent brain</h3>
-            <p>
-              Learns how you work and remembers across sessions — memory, skills, and artifacts
-              that stick around so agents pick up where you left off.
-            </p>
-          </article>
+    <section class="section section-alt" id="plans"><div class="container"><div class="section-head"><p class="eyebrow">Know what you get</p><h2>Free is the complete local core. Pro adds the connected layer.</h2><p class="section-lede">You can use Tendrite’s core desktop workspace without a license. Pro is for carrying context across projects, agents, and devices.</p></div><div class="comparison homepage-comparison"><div class="plan-card"><div class="plan-label">Free</div><h3>Local workspace</h3><p>The full open core for local agentic coding.</p><ul class="plan-list"><li>Desktop coding workspace</li><li>Project memory, skills, and artifacts</li><li>Agents, missions, and campaign board</li><li>Source control and editor</li><li>Provider, account, and local model setup</li></ul></div><div class="plan-card plan-card-pro"><div class="plan-label">Pro · one-time license</div><h3>Connected workspace</h3><p>Everything in Free, plus the context that follows you.</p><ul class="plan-list"><li>Warm multi-project switching</li><li>Cross-project personal/global brain</li><li>Git-synced team brain</li><li>Per-agent model/provider/account routing</li><li>Phone companion</li><li>Tailscale connectivity for private access</li></ul><p class="plan-footnote">Hosted Cloud Relay is a separate future service and is not available yet.</p></div></div></div></section>
 
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M4 6h7v5H4V6zM13 6h7v5h-7V6zM4 13h7v5H4v-5zM13 13h7v5h-7v-5z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3>Parallel agents</h3>
-            <p>
-              Run a team of agents that can work in isolated git worktrees — so they don’t
-              step on each other’s changes.
-            </p>
-          </article>
+    <section class="section" id="pro"><div class="container pro-callout"><div><p class="eyebrow">Tendrite Pro</p><h2>Carry your context everywhere.</h2><p class="section-lede">Unlock the connected layer for people who move across projects, machines, and moments throughout the day.</p></div><a class="btn btn-primary btn-lg" href="/pro/">See Pro licensing <span aria-hidden="true">↗</span></a></div></section>
 
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <rect x="7" y="2.5" width="10" height="19" rx="2.5" stroke="currentColor" stroke-width="1.75"/>
-                <path d="M10 18.5h4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>Phone companion</h3>
-            <p>
-              An installable phone companion lets you watch and steer runs from your phone —
-              check progress and nudge agents without sitting at the desk.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M4 7h16v11a2 2 0 01-2 2H6a2 2 0 01-2-2V7z" stroke="currentColor" stroke-width="1.75"/>
-                <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" stroke="currentColor" stroke-width="1.75"/>
-                <path d="M9 12h6M9 15h4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>Any project folder</h3>
-            <p>
-              Point Dendrite at any project folder and supervise agents working inside it —
-              features, fixes, refactors, research — right where your code already lives.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- INSTALL GUIDE (detailed) -->
-    <section id="install" class="install">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Get started</p>
-          <h2>Install in a few minutes</h2>
-          <p class="section-lede">No admin rights. No installer wizard maze. Just download and run.</p>
-        </div>
-
-        <div class="install-layout">
-          <ol class="install-steps">
-            <li class="install-step">
-              <span class="install-num" aria-hidden="true">1</span>
-              <div>
-                <h3>Download Setup.exe</h3>
-                <p>Grab the Windows installer from the download button. It’s a single Setup.exe for early builds.</p>
-                <a class="btn btn-primary" href="#download">Download for Windows</a>
-              </div>
-            </li>
-            <li class="install-step">
-              <span class="install-num" aria-hidden="true">2</span>
-              <div>
-                <h3>If Windows SmartScreen warns</h3>
-                <p>
-                  Early builds are unsigned, so Windows may show a SmartScreen warning.
-                  Click <strong>More info</strong>, then <strong>Run anyway</strong>.
-                </p>
-                <div class="callout">
-                  <strong>Why?</strong> Unsigned early build — expected during development. The app installs without admin privileges.
-                </div>
-              </div>
-            </li>
-            <li class="install-step">
-              <span class="install-num" aria-hidden="true">3</span>
-              <div>
-                <h3>Install (no admin needed)</h3>
-                <p>Run the installer. It installs without requiring administrator rights, so you can get going on a locked-down machine.</p>
-              </div>
-            </li>
-            <li class="install-step">
-              <span class="install-num" aria-hidden="true">4</span>
-              <div>
-                <h3>Connect a model &amp; open a folder</h3>
-                <p>
-                  Launch Dendrite Studio, connect the model you already use (Anthropic, OpenAI-compatible,
-                  Grok / Codex / Copilot, or Ollama), open any project folder, and start supervising agents.
-                </p>
-              </div>
-            </li>
-          </ol>
-
-          <aside class="install-aside">
-            <h3>What you’ll need</h3>
-            <ul>
-              <li>Windows PC</li>
-              <li>A model connection: API key, subscription, or local Ollama</li>
-              <li>A project folder to work in</li>
-            </ul>
-            <div class="aside-cta">
-              <p>Ready when you are.</p>
-              <a class="btn btn-primary btn-block" href="#download">Download for Windows</a>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA BAND -->
-    <section class="cta-band">
-      <div class="container cta-inner">
-        <div>
-          <h2>Run your agent team where the code lives.</h2>
-          <p>Local-first. Your models. Your machine.</p>
-        </div>
-        <a class="btn btn-primary btn-lg" href="#download">Download for Windows</a>
-      </div>
-    </section>
+    <section class="section section-alt" id="downloads"><div class="container download-panel"><div><p class="eyebrow">First public tester release</p><h2>Try Tendrite on Windows.</h2><p class="section-lede">The first public Windows installer is available from Cloudflare R2. Linux is still in preparation.</p></div><div class="download-actions"><a class="btn btn-primary" href="https://downloads.tendrite.dev/Tendrite-win-Setup.exe" data-download="windows" aria-label="Download Tendrite for Windows">Download for Windows</a><button class="btn btn-secondary" type="button" disabled aria-label="Linux download coming soon">Linux coming soon</button><a class="text-link" href="/pro/">Want Pro? See the purchase entry point →</a></div></div></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="brand-text">Dendrite Studio</span>
-        <p>Native Windows app for supervising AI coding agents.</p>
-      </div>
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="#features">Features</a>
-        <a href="#install">Install</a>
-        <a href="#download">Download</a>
-        <a href="https://github.com/mfillalan/dendrite-studio-site" rel="noopener noreferrer" target="_blank">GitHub</a>
-      </nav>
-      <div class="footer-meta">
-        <p class="footer-copy">
-          <span aria-hidden="true">&copy;</span>
-          <span id="footer-year">2026</span> Dendrite Studio
-          <span class="footer-sep" aria-hidden="true">·</span>
-          <a href="https://github.com/mfillalan/dendrite-studio-site" rel="noopener noreferrer" target="_blank">Source on GitHub</a>
-        </p>
-        <p class="footer-note">Early build · Unsigned installer may trigger SmartScreen</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer class="site-footer"><div class="container footer-inner"><div class="footer-brand"><span class="brand-text">Tendrite</span><p>A local-first workspace for agentic coding.</p></div><nav class="footer-nav" aria-label="Footer"><a href="#workspace">Workspace</a><a href="#plans">Free vs Pro</a><a href="/pro/">Pro</a><a href="https://github.com/mfillalan/tendrite-site" target="_blank" rel="noopener noreferrer">GitHub</a></nav><div class="footer-meta"><p class="footer-copy">© <span id="footer-year">2026</span> Tendrite · <a href="https://tendrite.dev/pro">tendrite.dev/pro</a></p><p class="footer-note">First public Windows tester release</p></div></div></footer>
+  <script src="config.js"></script><script src="script.js"></script>
 </body>
 </html>

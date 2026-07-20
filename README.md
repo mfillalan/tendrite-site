@@ -1,57 +1,35 @@
-# Dendrite Studio — promotional site
+# Tendrite website
 
-Clean, self-contained static landing page for **Dendrite Studio**.
+Static marketing site and Pro purchase entry point for Tendrite, a local-first desktop coding workspace for teams of AI agents.
 
 ## Run locally
 
-Open `index.html` in a browser, or serve the folder:
-
 ```bash
-# Python
 python -m http.server 8080
-
-# Node
-npx serve .
 ```
 
-Then visit `http://localhost:8080`.
+Open `http://127.0.0.1:8080/` for the product page or `http://127.0.0.1:8080/pro/` for the Pro page.
 
-## Contents
+## Files
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Single-page promo: hero + download, features, install guide |
-| `styles.css` | Layout and theme |
-| `script.js` | Mobile nav + light polish |
+| `index.html` | Tendrite product overview and free workspace page |
+| `pro/index.html` | Pro benefits, plan comparison, purchase entry point, and FAQ |
+| `styles.css` | Shared responsive visual system |
+| `script.js` | Mobile navigation, footer year, and Paddle checkout states |
+| `config.js` | Public environment and product configuration |
 
-## Download button
+## Paddle Sandbox
 
-The **Download for Windows** CTA currently scrolls to the install section. When a real `Setup.exe` URL is available, set `DOWNLOAD_URL` in `script.js` (and optionally point the hero button `href` straight at that file).
+`config.js` contains the existing Sandbox price ID and an intentionally empty client-side token. Add the Paddle **client-side token** from the Paddle dashboard to `clientToken` for local testing; do not add API keys, webhook secrets, or other private credentials to this repository.
 
-## Live site
+To move to Live, change `environment` to `live`, replace `clientToken` with the Live client-side token, and replace `priceId` with the Live price ID created for the production Pro product. Do not reuse the Sandbox price ID in production.
 
-- **Repo:** https://github.com/mfillalan/dendrite-studio-site
-- **GitHub Pages:** https://mfillalan.github.io/dendrite-studio-site/
+## Downloads
 
-Publishing source is the `main` branch root (with `.nojekyll` so Pages serves plain HTML).
+The first public Windows tester installer is configured in `config.js` and hosted at `https://downloads.tendrite.dev/Tendrite-win-Setup.exe`. Linux remains disabled until its release artifact is ready. Keep download URLs public only; do not add R2 credentials or other private tokens to this repository.
 
-## Deploy
+## Deployment
 
-Any static host works (GitHub Pages, Netlify, Cloudflare Pages, S3, etc.). No build step.
-
-### Installer distribution (Setup.exe)
-
-Do **not** commit the binary into this repo. Use **GitHub Releases** on this repo (or on the app repo):
-
-```bash
-# after you have a built Setup.exe
-gh release create v0.1.0 ./path/to/DendriteStudio-Setup.exe \
-  --title "Dendrite Studio 0.1.0" \
-  --notes "Early Windows build. SmartScreen may warn (unsigned)."
-```
-
-Then set `DOWNLOAD_URL` in `script.js` to the release asset URL, e.g.:
-
-`https://github.com/mfillalan/dendrite-studio-site/releases/download/v0.1.0/DendriteStudio-Setup.exe`
-
-Limits (GitHub docs): each release asset &lt; 2 GiB; no stated bandwidth cap on release downloads.
+The site has no build step. It can be deployed from the repository root to Cloudflare Pages, GitHub Pages, or another static host. The `/pro/` directory provides the `/pro/` route for static hosting.
