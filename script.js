@@ -24,6 +24,35 @@
     if (url) link.setAttribute("href", url);
   });
 
+  var supportForm = document.querySelector("[data-support-form]");
+  if (supportForm) {
+    var supportStatus = supportForm.querySelector("[data-support-status]");
+    supportForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var data = new FormData(supportForm);
+      var category = data.get("category") || "General question";
+      var body = [
+        "Tendrite support request",
+        "",
+        "Category: " + category,
+        "Name: " + (data.get("name") || "Not provided"),
+        "Reply email: " + (data.get("email") || "Not provided"),
+        "Product or platform: " + (data.get("product") || "Not provided"),
+        "Version or context: " + (data.get("context") || "Not provided"),
+        "",
+        "Request:",
+        data.get("message") || ""
+      ].join("\n");
+      var mailto = "mailto:support@tendrite.dev?subject=" + encodeURIComponent("[" + category + "] Tendrite support request") + "&body=" + encodeURIComponent(body);
+      if (supportStatus) {
+        supportStatus.textContent = "Your email app should open with your request prepared. Review it, then send when ready.";
+        supportStatus.classList.add("is-ready");
+        supportStatus.focus();
+      }
+      window.location.href = mailto;
+    });
+  }
+
   var lightbox = document.querySelector("[data-image-lightbox]");
   var lightboxImage = lightbox && lightbox.querySelector("[data-lightbox-image]");
   var lightboxCaption = lightbox && lightbox.querySelector("[data-lightbox-caption]");
