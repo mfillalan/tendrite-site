@@ -2,6 +2,6 @@
 window.TENDRITE_CONFIG = {
   downloads: {
     windows: "https://downloads.tendrite.dev/Tendrite-win-Setup.exe",
-    linux: ""
+    linux: "https://downloads.tendrite.dev/Tendrite.AppImage"
   }
 };

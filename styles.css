@@ -219,12 +219,15 @@ h1, h2, h3, p { margin-top: 0; }
 .plan-card li strong { color: var(--orange); font-weight: 600; }
 .text-link { margin-top: auto; color: var(--green); font-size: .9rem; font-weight: 700; }
 .text-link:hover { color: #8bf49f; text-decoration: underline; }
+.platform-links { display: flex; flex-wrap: wrap; gap: .85rem 1.25rem; margin-top: auto; }
+.platform-links .text-link { margin-top: 0; }
 .download-section { background: var(--ink); }
 .download-panel { display: flex; align-items: center; justify-content: space-between; gap: 3rem; padding: 2rem; border: 1px solid var(--line); border-left: 4px solid var(--orange); background: var(--panel-deep); }
 .download-panel h2 { margin-bottom: .6rem; font-size: clamp(2rem, 3.5vw, 3rem); letter-spacing: -.05em; }
 .download-panel p:not(.eyebrow) { max-width: 55ch; margin: 0; color: var(--muted); }
 .download-actions { display: grid; min-width: 260px; gap: .7rem; }
 .download-actions small { color: var(--dim); font-size: .72rem; text-align: center; }
+.download-license-link { justify-self: center; margin-top: .15rem; }
 
 .creator-section { background: #121811; }
 .creator-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .72fr); gap: 4rem; align-items: start; }
