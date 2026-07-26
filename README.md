@@ -1,6 +1,6 @@
 # Tendrite website
 
-Static marketing site and Pro purchase entry point for Tendrite, a local-first desktop coding workspace for teams of AI agents.
+Static marketing site and Pro product overview for Tendrite, a local-first desktop coding workspace for teams of AI agents.
 
 ## Run locally
 
@@ -15,16 +15,20 @@ Open `http://127.0.0.1:8080/` for the product page or `http://127.0.0.1:8080/pro
 | File | Purpose |
 |------|---------|
 | `index.html` | Tendrite product overview and free workspace page |
-| `pro/index.html` | Pro benefits, plan comparison, purchase entry point, and FAQ |
+| `pro/index.html` | Pro benefits, plan comparison, availability status, and FAQ |
 | `styles.css` | Shared responsive visual system |
-| `script.js` | Mobile navigation, footer year, and Paddle checkout states |
+| `script.js` | Mobile navigation, footer year, download links, and image lightbox |
 | `config.js` | Public environment and product configuration |
 
-## Paddle Sandbox
+## Pro payment status
 
-`config.js` contains the existing Sandbox price ID and an intentionally empty client-side token. Add the Paddle **client-side token** from the Paddle dashboard to `clientToken` for local testing; do not add API keys, webhook secrets, or other private credentials to this repository.
+Pro checkout is intentionally disabled while payment processing is prepared for launch. The site contains no Paddle configuration or checkout code, so visitors cannot open a sandbox or live payment flow.
 
-To move to Live, change `environment` to `live`, replace `clientToken` with the Live client-side token, and replace `priceId` with the Live price ID created for the production Pro product. Do not reuse the Sandbox price ID in production.
+### Milestone — 2026-07-26
+
+Disabled the sandbox Pro checkout until live payment processing is ready.
+
+Added the Memory Substrate feature story and product capture, explaining agent-led capture, ranked recall, and reversible consolidation.
 
 ## Downloads
 

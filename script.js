@@ -72,32 +72,4 @@
     });
   }
 
-  function loadPaddle() {
-    if (window.Paddle) return Promise.resolve(window.Paddle);
-    return new Promise(function (resolve, reject) {
-      var script = document.createElement("script"); script.src = "https://cdn.paddle.com/paddle/v2/paddle.js"; script.async = true;
-      script.onload = function () { resolve(window.Paddle); }; script.onerror = reject; document.head.appendChild(script);
-    });
-  }
-
-  function setCheckoutState(state, message) {
-    document.querySelectorAll("[data-checkout-state]").forEach(function (el) { el.hidden = el.getAttribute("data-checkout-state") !== state; });
-    document.querySelectorAll("[data-checkout-message]").forEach(function (el) { if (message) el.textContent = message; });
-  }
-
-  document.querySelectorAll("[data-paddle-checkout]").forEach(function (button) {
-    button.addEventListener("click", function () {
-      if (!config.paddle || !config.paddle.clientToken || !config.paddle.priceId) { setCheckoutState("unavailable"); return; }
-      button.disabled = true; setCheckoutState("loading");
-      loadPaddle().then(function (Paddle) {
-        if (config.paddle.environment === "sandbox") Paddle.Environment.set("sandbox");
-        Paddle.Initialize({ token: config.paddle.clientToken, eventCallback: function (event) {
-          if (event && event.name === "checkout.completed") setCheckoutState("completed");
-          if (event && event.name === "checkout.error") setCheckoutState("failure", "Paddle could not open checkout. Please try again.");
-        }});
-        Paddle.Checkout.open({ items: [{ priceId: config.paddle.priceId, quantity: 1 }] });
-        setCheckoutState("ready");
-      }).catch(function () { setCheckoutState("failure", "Checkout could not load. Check your connection and try again."); }).finally(function () { button.disabled = false; });
-    });
-  });
 })();
