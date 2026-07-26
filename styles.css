@@ -212,6 +212,10 @@ h1, h2, h3, p { margin-top: 0; }
 .plan-kicker, .plan-label { margin-bottom: 1.8rem; color: var(--orange); font: 600 .7rem var(--mono); letter-spacing: .1em; }
 .plan-card-highlight .plan-kicker, .plan-card-pro .plan-label { color: var(--green); }
 .plan-card h3 { margin-bottom: .45rem; font-size: 1.4rem; letter-spacing: -.03em; }
+.plan-price { display: flex; align-items: baseline; gap: .45rem; margin: .25rem 0; color: var(--paper); }
+.plan-price-amount { font-size: 2.1rem; font-weight: 700; letter-spacing: -.06em; line-height: 1; }
+.plan-price-cadence { color: var(--muted); font-size: .82rem; }
+.plan-price-note { min-height: 1.3rem; margin: 0 0 .8rem; color: var(--dim); font-size: .78rem; }
 .plan-summary { min-height: 3.1rem; color: var(--muted); }
 .plan-card ul, .plan-list { display: grid; gap: .63rem; margin: 1.4rem 0 1.8rem; padding: 0; list-style: none; color: var(--muted); font-size: .88rem; }
 .plan-card li { position: relative; padding-left: 1rem; }
