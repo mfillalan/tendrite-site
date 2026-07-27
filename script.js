@@ -45,13 +45,14 @@
           eventCallback: function (event) {
             if (event.name === "checkout.loaded") setPaddleCheckoutStatus("Secure checkout is ready.", false);
             if (event.name === "checkout.error" || event.name === "checkout.payment.error") {
+              var paddleError = event.data && typeof event.data === "object" ? (event.data.error || event.data) : event;
               console.warn("Paddle checkout error", {
-                type: event.type,
-                code: event.code,
-                detail: event.detail,
-                documentationUrl: event.documentation_url
+                type: paddleError.type,
+                code: paddleError.code,
+                detail: paddleError.detail,
+                documentationUrl: paddleError.documentation_url
               });
-              var code = typeof event.code === "string" && event.code ? " (Paddle: " + event.code + ")" : "";
+              var code = typeof paddleError.code === "string" && paddleError.code ? " (Paddle: " + paddleError.code + ")" : "";
               setPaddleCheckoutStatus("Checkout could not be completed. Please try again or contact support." + code, true);
             }
             if (event.name === "checkout.warning") console.warn("Paddle checkout warning", event);
