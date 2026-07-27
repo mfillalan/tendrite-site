@@ -24,6 +24,61 @@
     if (url) link.setAttribute("href", url);
   });
 
+  var paddleConfig = config.paddle || {};
+  var paddleCheckoutButtons = document.querySelectorAll("[data-paddle-price]");
+  var paddleCheckoutReady = false;
+
+  function setPaddleCheckoutStatus(message, isError) {
+    document.querySelectorAll("[data-paddle-status]").forEach(function (status) {
+      status.textContent = message;
+      status.classList.toggle("is-error", Boolean(isError));
+    });
+  }
+
+  if (paddleCheckoutButtons.length) {
+    if (!paddleConfig.clientToken || !paddleConfig.prices || !paddleConfig.prices.pro || !window.Paddle) {
+      setPaddleCheckoutStatus("Secure checkout is temporarily unavailable. Please try again later or contact support.", true);
+    } else {
+      try {
+        window.Paddle.Initialize({
+          token: paddleConfig.clientToken,
+          eventCallback: function (event) {
+            if (event.name === "checkout.loaded") setPaddleCheckoutStatus("Secure checkout is ready.", false);
+            if (event.name === "checkout.error" || event.name === "checkout.payment-error") {
+              setPaddleCheckoutStatus("Checkout could not be completed. Please try again or contact support.", true);
+            }
+          }
+        });
+        paddleCheckoutReady = true;
+        paddleCheckoutButtons.forEach(function (button) { button.disabled = false; });
+        setPaddleCheckoutStatus("Secure checkout is ready.", false);
+      } catch (error) {
+        setPaddleCheckoutStatus("Secure checkout is temporarily unavailable. Please try again later or contact support.", true);
+      }
+    }
+
+    paddleCheckoutButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        var priceId = paddleConfig.prices[button.getAttribute("data-paddle-price")];
+        if (!paddleCheckoutReady || !priceId) {
+          setPaddleCheckoutStatus("Secure checkout is temporarily unavailable. Please try again later or contact support.", true);
+          return;
+        }
+        try {
+          window.Paddle.Checkout.open({
+            items: [{ priceId: priceId, quantity: 1 }],
+            settings: {
+              variant: "one-page",
+              successUrl: window.location.origin + "/pro/?checkout=complete"
+            }
+          });
+        } catch (error) {
+          setPaddleCheckoutStatus("Checkout could not be opened. Please try again or contact support.", true);
+        }
+      });
+    });
+  }
+
   var supportForm = document.querySelector("[data-support-form]");
   if (supportForm) {
     var supportStatus = supportForm.querySelector("[data-support-status]");

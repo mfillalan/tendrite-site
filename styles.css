@@ -279,6 +279,7 @@ h1, h2, h3, p { margin-top: 0; }
 .checkout-price strong { color: var(--paper); font-size: 1.15rem; }
 .checkout-status { min-height: 3.5rem; margin-top: 1rem; color: var(--muted); font-size: .85rem; }
 .checkout-status p { margin: 0; }
+.checkout-status.is-error { color: var(--orange); }
 .checkout-card > small { display: block; color: var(--dim); font-size: .72rem; text-align: center; }
 .faq { max-width: 830px; }
 .faq details { padding: 1rem 0; border-top: 1px solid var(--line); }
