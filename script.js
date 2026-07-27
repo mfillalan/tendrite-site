@@ -44,9 +44,16 @@
           token: paddleConfig.clientToken,
           eventCallback: function (event) {
             if (event.name === "checkout.loaded") setPaddleCheckoutStatus("Secure checkout is ready.", false);
-            if (event.name === "checkout.error" || event.name === "checkout.payment-error") {
+            if (event.name === "checkout.error" || event.name === "checkout.payment.error") {
+              console.warn("Paddle checkout error", {
+                type: event.type,
+                code: event.code,
+                detail: event.detail,
+                documentationUrl: event.documentation_url
+              });
               setPaddleCheckoutStatus("Checkout could not be completed. Please try again or contact support.", true);
             }
+            if (event.name === "checkout.warning") console.warn("Paddle checkout warning", event);
           }
         });
         paddleCheckoutReady = true;
