@@ -51,7 +51,8 @@
                 detail: event.detail,
                 documentationUrl: event.documentation_url
               });
-              setPaddleCheckoutStatus("Checkout could not be completed. Please try again or contact support.", true);
+              var code = typeof event.code === "string" && event.code ? " (Paddle: " + event.code + ")" : "";
+              setPaddleCheckoutStatus("Checkout could not be completed. Please try again or contact support." + code, true);
             }
             if (event.name === "checkout.warning") console.warn("Paddle checkout warning", event);
           }
