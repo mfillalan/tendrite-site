@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Release notes for Tendrite, the local-first command center for AI-assisted coding work.">
+  <title>Tendrite | Changelog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/tendrite-logo-32.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Tendrite home">
+        <span class="brand-mark"><img src="../assets/tendrite-logo-64.png" width="64" height="64" alt=""></span>
+        <span>Tendrite</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="../">Workspace</a>
+        <a href="../#plans">Plans</a>
+        <a href="../pro/">Pro</a>
+        <a href="../support/">Support</a>
+        <a class="nav-cta" href="../#downloads">Download</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="../">Workspace</a>
+      <a href="../#plans">Plans</a>
+      <a href="../pro/">Pro</a>
+      <a href="../support/">Support</a>
+      <a href="../#downloads">Download</a>
+    </nav>
+  </header>
+
+  <main id="main" class="changelog-main">
+    <div class="container">
+      <section class="changelog-hero">
+        <div>
+          <p class="eyebrow">Release notes</p>
+          <h1>What changed in Tendrite.</h1>
+          <p>A running record of the improvements, fixes, and new capabilities shipped in the local-first coding command center.</p>
+        </div>
+        <div class="changelog-meta">
+          <span>Latest release</span>
+          <strong>0.2.3</strong>
+          <span>Published</span>
+          <strong>August 2, 2026</strong>
+        </div>
+      </section>
+
+      <section class="release-list" aria-label="Tendrite releases">
+        <article class="release-entry" id="0-2-3">
+          <div class="release-heading">
+            <h2>0.2.3</h2>
+            <time class="release-date" datetime="2026-08-02">August 2, 2026</time>
+          </div>
+          <p class="release-summary">A broad beta update with a clearer agent command center, faster boards and previews, stronger remote control, and better support diagnostics.</p>
+          <h3>Added</h3>
+          <ul>
+            <li><strong>Agent Command Center improvements.</strong> See which agents need input, are working, or are ready for review, with clearer navigation into the relevant work.</li>
+            <li><strong>Campaign review workflow.</strong> Campaigns surface completed work and review-ready missions more clearly.</li>
+            <li><strong>Pro model route picker.</strong> Choose the Pro model route and reasoning effort directly from the app.</li>
+            <li><strong>Support reports with screenshots.</strong> Send a diagnostic report and optional screenshot to Tendrite support without leaving the app.</li>
+            <li><strong>Online release notes and performance diagnostics.</strong> The post-update What's New view links to the full changelog, while frame timing, memory, and retained-preview behavior are easier to inspect.</li>
+          </ul>
+          <h3>Changed</h3>
+          <ul>
+            <li><strong>Smoother boards and previews.</strong> Optimized blueprint rendering, repaint scheduling, diff cards, Mermaid previews, and agent-panel layout under sustained activity.</li>
+            <li><strong>Richer desktop operations.</strong> Improved terminal, editor, file-tree, source-control, task, and command-palette behavior across common workflows.</li>
+            <li><strong>More capable Cloud Relay companion.</strong> Expanded remote state and attention signals, including richer agent and reasoning status.</li>
+            <li><strong>Quieter Windows production builds.</strong> Captured Git, hook, MCP, and other helper processes no longer flash a console window.</li>
+          </ul>
+          <h3>Fixed</h3>
+          <ul>
+            <li><strong>Duplicate campaign updates.</strong> Repeated checklist events no longer create duplicate visible updates.</li>
+            <li><strong>Agent and blueprint containment.</strong> Large diff cards and blueprint repaints stay within their intended surfaces instead of disturbing surrounding layout.</li>
+          </ul>
+        </article>
+
+        <article class="release-entry" id="0-2-2">
+          <div class="release-heading">
+            <h2>0.2.2</h2>
+            <time class="release-date" datetime="2026-07-26">July 26, 2026</time>
+          </div>
+          <p class="release-summary">Tendrite Cloud is now available in official builds, with a smoother path from the desktop app to Cloud checkout.</p>
+          <h3>Added</h3>
+          <ul>
+            <li><strong>Tendrite Cloud is now available in official builds.</strong> Pro owners can sign in, start Cloud checkout, and manage their account from the desktop app.</li>
+          </ul>
+          <h3>Fixed</h3>
+          <ul>
+            <li><strong>Reliable Cloud checkout handoff.</strong> Official desktop builds now accept the approved Tendrite checkout return URL, and the live service sends the valid recurring Pro-owner discount payload.</li>
+          </ul>
+        </article>
+
+        <article class="release-entry" id="0-2-1">
+          <div class="release-heading">
+            <h2>0.2.1</h2>
+            <time class="release-date" datetime="2026-07-26">July 26, 2026</time>
+          </div>
+          <h3>Added</h3>
+          <ul>
+            <li><strong>Cloud Relay device awareness.</strong> Phone and Account &amp; Cloud settings load enrolled devices automatically when opened, without continuous background polling.</li>
+          </ul>
+          <h3>Changed</h3>
+          <ul>
+            <li><strong>Cleaner refresh controls.</strong> Device, memory, and source-control refresh actions use compact icon buttons with clear tooltips.</li>
+            <li><strong>Sharper operational surfaces.</strong> Fixed clipping in the agent and Source Control panels, and removed retired Grok avatar artwork from the desktop bundle.</li>
+          </ul>
+        </article>
+
+        <article class="release-entry" id="0-2-0">
+          <div class="release-heading">
+            <h2>0.2.0</h2>
+            <time class="release-date" datetime="2026-07-16">July 16, 2026</time>
+          </div>
+          <p class="release-summary"><strong>Dendrite Studio became Tendrite.</strong> The app, its config, and its per-project data move with the name automatically on first launch.</p>
+          <h3>Highlights</h3>
+          <ul>
+            <li>Renamed the app, window, executable, and phone companion to Tendrite.</li>
+            <li>Moved existing settings and project data into Tendrite-owned locations without deleting the originals.</li>
+            <li>Added the post-update What&rsquo;s New screen and richer About diagnostics.</li>
+            <li>Improved first-run setup so choosing a trust level no longer finishes onboarding early.</li>
+          </ul>
+        </article>
+      </section>
+
+      <aside class="changelog-callout">
+        <strong>Running an older build?</strong> Open Settings &rarr; About in Tendrite to check for updates, or <a href="../#downloads">download the latest build</a> for Windows or Linux.
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><div><a class="brand" href="../"><span class="brand-mark"><img src="../assets/tendrite-logo-64.png" width="64" height="64" alt=""></span><span>Tendrite</span></a><p>Local-first command center for agentic coding.</p></div><nav aria-label="Footer navigation"><a href="../">Workspace</a><a href="../#plans">Plans</a><a href="../pro/">Pro</a><a href="../support/">Support</a><a href="../terms/">Terms</a><a href="../privacy/">Privacy</a><a href="../refunds/">Refunds</a><a href="https://github.com/mfillalan/tendrite" target="_blank" rel="noopener noreferrer">Open source</a><a href="https://x.com/MichaelFillalan" target="_blank" rel="noopener noreferrer">X</a></nav><p class="footer-meta">Copyright <span id="footer-year">2026</span> Tendrite. Beta release channel.</p></div></footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
