@@ -22,6 +22,7 @@
       <nav class="nav" aria-label="Primary navigation">
         <a href="../">Workspace</a>
         <a href="../#plans">Plans</a>
+        <a href="./">Changelog</a>
         <a href="../pro/">Pro</a>
         <a href="../support/">Support</a>
         <a class="nav-cta" href="../#downloads">Download</a>
@@ -33,6 +34,7 @@
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
       <a href="../">Workspace</a>
       <a href="../#plans">Plans</a>
+      <a href="./">Changelog</a>
       <a href="../pro/">Pro</a>
       <a href="../support/">Support</a>
       <a href="../#downloads">Download</a>
@@ -49,13 +51,51 @@
         </div>
         <div class="changelog-meta">
           <span>Latest release</span>
-          <strong>0.2.3</strong>
+          <strong>0.2.4</strong>
           <span>Published</span>
-          <strong>August 2, 2026</strong>
+          <strong>August 7, 2026</strong>
         </div>
       </section>
 
       <section class="release-list" aria-label="Tendrite releases">
+        <article class="release-entry" id="0-2-4">
+          <div class="release-heading">
+            <h2>0.2.4</h2>
+            <time class="release-date" datetime="2026-08-07">August 7, 2026</time>
+          </div>
+          <p class="release-summary">A polish-and-reliability release: dockables you can actually control, live coach walkthroughs, a sticky agent panel, fewer missing glyphs, and calmer boards under load.</p>
+          <h3>Added</h3>
+          <ul>
+            <li><strong>Dockables control center.</strong> A permanent gear on the agent seam lets you show or hide Console, Performance, Debug, and Learning, and choose compact or extended seam tabs.</li>
+            <li><strong>Learning Center + live coach.</strong> Guided walkthroughs and spotlight tours for first-run and core workflows, with multi-step StartGuide support for agents.</li>
+            <li><strong>Floating dockables snap back.</strong> Drag a detached Console, Performance, Debug, or Learning panel near the agent seam to re-attach it.</li>
+            <li><strong>Remembered agent panel width.</strong> The AI panel keeps its share of the window across restarts, so it still fits after maximize or monitor changes.</li>
+            <li><strong>Remove abandoned projects.</strong> Right-click a recent project to drop it from the home list without touching on-disk data.</li>
+            <li><strong>Brain health at a glance.</strong> The Memory panel surfaces a scorecard-style health header; Skills and Agents empty states are clearer when nothing is installed yet.</li>
+            <li><strong>Honest editor LSP tiers.</strong> Completion and language-server status chips say what is actually available instead of implying full IDE coverage.</li>
+            <li><strong>Campaign Commit / Merge clarity.</strong> Shipping progress and deterministic ship paths for campaign review, with live chrome driven by real claims.</li>
+          </ul>
+          <h3>Changed</h3>
+          <ul>
+            <li><strong>Console-only Dockables by default.</strong> Fresh installs and this upgrade enable only the Console (terminal) on the seam. Performance, Debug, and Learning start off; turn them back on from the Dockables gear. Your later choices are kept.</li>
+            <li><strong>Extended seam tabs by default.</strong> Dockable tabs stay at full letter width (compact-on-hover is opt-in). Existing installs flip once on upgrade, then leave your preference alone.</li>
+            <li><strong>Activity scoreboard.</strong> The usage dashboard reads as an activity view, including days where token totals are zero.</li>
+            <li><strong>Calmer boards under load.</strong> Mission IO no longer re-parses every frame; graph neighbor lookups are cheaper; auto-merge copy is honest about what it does.</li>
+          </ul>
+          <h3>Fixed</h3>
+          <ul>
+            <li><strong>Undock no longer crashes.</strong> Detaching a dockable no longer hits a mid-frame layer assert.</li>
+            <li><strong>Seam tabs stay useful while open.</strong> Open dockables keep a real tab under the speech tail; peer bodies no longer paint over the tab column.</li>
+            <li><strong>Boot splash keeps animating.</strong> The splash no longer freezes while the main app constructs, and the window maximizes onto the primary monitor after handoff.</li>
+            <li><strong>Tofu / missing glyphs.</strong> Free-text arrows and symbols paint via a shipped ui-symbols fallback; mission titles, coach cards, and swarm icons scrub unsupported glyphs instead of empty squares.</li>
+            <li><strong>Context menus hug their labels.</strong> Right-click menus no longer stretch into long empty strips across wide cards.</li>
+            <li><strong>Agents resume after sleep / network blips.</strong> Mid-run work can continue instead of dying quietly when the laptop sleeps or the link drops.</li>
+            <li><strong>Stale mission cards clean themselves up.</strong> Finished board cards auto-complete instead of lingering as open work.</li>
+            <li><strong>Tour coach chrome.</strong> Coach cards sit above dim strips and modals, park next to the spotlight, and no longer double-fire rail tabs on basics guides.</li>
+            <li><strong>Hit targets.</strong> Review Queue, traffic lights, and file links respond on the full clickable area, not a tiny text glyph.</li>
+          </ul>
+        </article>
+
         <article class="release-entry" id="0-2-3">
           <div class="release-heading">
             <h2>0.2.3</h2>
@@ -138,7 +178,7 @@
     </div>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><div><a class="brand" href="../"><span class="brand-mark"><img src="../assets/tendrite-logo-64.png" width="64" height="64" alt=""></span><span>Tendrite</span></a><p>Local-first command center for agentic coding.</p></div><nav aria-label="Footer navigation"><a href="../">Workspace</a><a href="../#plans">Plans</a><a href="../pro/">Pro</a><a href="../support/">Support</a><a href="../terms/">Terms</a><a href="../privacy/">Privacy</a><a href="../refunds/">Refunds</a><a href="https://github.com/mfillalan/tendrite" target="_blank" rel="noopener noreferrer">Open source</a><a href="https://x.com/MichaelFillalan" target="_blank" rel="noopener noreferrer">X</a></nav><p class="footer-meta">Copyright <span id="footer-year">2026</span> Tendrite. Beta release channel.</p></div></footer>
+  <footer class="site-footer"><div class="container footer-inner"><div><a class="brand" href="../"><span class="brand-mark"><img src="../assets/tendrite-logo-64.png" width="64" height="64" alt=""></span><span>Tendrite</span></a><p>Local-first command center for agentic coding.</p></div><nav aria-label="Footer navigation"><a href="../">Workspace</a><a href="../#plans">Plans</a><a href="./">Changelog</a><a href="../pro/">Pro</a><a href="../support/">Support</a><a href="../terms/">Terms</a><a href="../privacy/">Privacy</a><a href="../refunds/">Refunds</a><a href="https://github.com/mfillalan/tendrite" target="_blank" rel="noopener noreferrer">Open source</a><a href="https://x.com/MichaelFillalan" target="_blank" rel="noopener noreferrer">X</a></nav><p class="footer-meta">Copyright <span id="footer-year">2026</span> Tendrite. Beta release channel.</p></div></footer>
 
   <script src="../script.js"></script>
 </body>
